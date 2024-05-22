@@ -4,12 +4,12 @@ import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-import { 
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Routes
- } from 'react-router-dom';
+// import { 
+//   BrowserRouter as Router,
+//   Route,
+//   Link,
+//   Routes
+//  } from 'react-router-dom';
 
 
 
@@ -41,16 +41,18 @@ function App() {
   }
 
   return (
-    <Router>
+    // <Router>
+    <>
       <Navbar title="Textutils" aboutText="About Text" mode={darkMode} modeFun={toogleDark} />
       <Alert alert={alert} />
-      <Routes>
-      <Route exact path='/' element={<div className="container my-3" style={{color: darkMode==='dark' ? 'white' : 'black'}}>
+      {/* <Routes> */}
+      <div className="container my-3" style={{color: darkMode==='dark' ? 'white' : 'black'}}>
           <TextForm mode={darkMode} alertFun={showAlert} />
-        </div>} />
-      <Route exact path='/about' element={<About />} />
+        </div>
+      {/* <Route exact path='/about' element={<About />} />
       </Routes>
-      </Router>
+      </Router> */}
+      </>
   )
 }
 
